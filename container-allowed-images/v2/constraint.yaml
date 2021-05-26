@@ -1,7 +1,7 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sAzureContainerAllowedImagesBad
 metadata:
-  name: container-allowed-images
+  name: container-allowed-images-bad
 spec:
   match:
     kinds:
