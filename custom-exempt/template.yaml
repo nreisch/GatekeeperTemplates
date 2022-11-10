@@ -1,0 +1,17 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8se2ecustomexempt
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sE2ECustomExempt
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8se2ecustomexempt
+        violation[{"msg": msg, "details": {}}] {
+            not true
+            msg := "k8se2ecustomexempt"
+        }
